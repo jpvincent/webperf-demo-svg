@@ -2,7 +2,7 @@
   "name": "demo-svg-app",
   "version": "0.1.0",
   "private": true,
-  "sideEffects": false,
+  "--sideEffects": false,
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
@@ -62,7 +62,6 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js",
     "serve": "npx serve build",
     "build:profiling": "npm run build -- --profile",
     "svg-build": "npx @svgr/cli --out-dir public/svgr-out/ src/assets/"
