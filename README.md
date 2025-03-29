@@ -15,13 +15,13 @@ Pour les modifications externes de couleur, on teste
 - avoir installé : `npm install`
 - avoir build au moins une fois les SVG : `npm run svg-build`
 - Pour afficher la page `npm start`
-- - regarder le réseau
-- pour regarder
-- pour regarder les conséquences des composants React
+- - regarder le réseau, notamment pour le poids du JS et les images lazy-loadés
+- pour mieux voir les conséquences des composants React
   - `npm run build:profiling`
   - regarder ce que contiennent les chunks, il y a les SVG composantifiés
   - trouver unused => cela signifie qu'à cause du barrel file de svgr-out, on récupère tous les SVG
   - solution : dans `package.json` passer à `"--sideEffects": false,`
+- voir la page en mode bundle : `npm run serve`
 
 
 
