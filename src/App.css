@@ -1,3 +1,4 @@
+/* Les App- sont les CSS générés par la démo React */
 .App {
   text-align: center;
 }
@@ -35,4 +36,24 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* À partir d'ici, technique du masque */
+.mask-icon{
+  display: inline-block;
+  mask-image: var(--svg);
+  width: 150px;
+  height: 150px;
+}
+.mask-icon-currentcolor {
+  background-color: currentColor;
+}
+.mask-icon-variable {
+  background-color: var(--logo-fill);
+}
+.mask-icon-logo {
+  --svg: url('./assets/logo-currentcolor.svg');
+}
+.mask-icon-circle {
+  --svg: url('./assets/circle-currentcolor.svg');
 }

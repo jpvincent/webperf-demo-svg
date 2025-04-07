@@ -17,8 +17,7 @@ import iconsCustom from './assets/icons-variable.svg';
 import icons from './assets/icons-currentcolor.svg';
 
 // import depuis la sortie SVGR
-// même avec cette syntaxe, le fichier unusedSettings.js est embarqué dans le bundle
-//
+// même avec cette syntaxe, le fichier unusedSettings.js est embarqué dans le bundle si sideEffects n'est pas à false
 import {LogoCurrentcolor, LogoVariable} from 'svgr-out'
 
 import React, { useState } from 'react';
@@ -78,9 +77,18 @@ function App() {
             <use xlinkHref={`${icons}#icon-circle`} />
           </svg>
         </div>
+        <h2>Utilisation en masque + background-image</h2>
+        <p>Avantage : pas de JS, accès une couleur
+          Désavantage : uniquement pour une icône monochrome, pas de <code>fechpriority</code> ou de <code>loading=lazy</code>, baseline 2023
+            <br />
+          </p>
+        <div>
+          <span className="mask-icon mask-icon-currentcolor mask-icon-logo"></span>
+          <span className="mask-icon  mask-icon-currentcolor mask-icon-circle"></span>
+        </div>
+
+
       </div>
-
-
 
 
       <h1>Utilisation des CSS custom properties</h1>
@@ -119,7 +127,20 @@ function App() {
             <use xlinkHref={`${iconsCustom}#icon-circle`} />
           </svg>
         </div>
+
+        <h2>Utilisation en masque + background-image</h2>
+        <p>Avantage : pas de JS, accès une couleur
+          Désavantage : uniquement pour une icône monochrome, pas de <code>fechpriority</code> ou de <code>loading=lazy</code>, baseline 2023
+            <br />
+          </p>
+        <div>
+          <span className="mask-icon mask-icon-variable mask-icon-logo"></span>
+          <span className="mask-icon  mask-icon-variable mask-icon-circle"></span>
+        </div>
+
       </div>
+
+
     </div>
   );
 }
